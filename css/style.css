@@ -1,24 +1,89 @@
-.card{
-    width: 18rem;
+header div {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  align-items: center;
 }
-div#contenedor{
-    display: flex;
-    flex-wrap: wrap;
-    align-content: center;
-    justify-content: center;
+header div .btn .btn {
+  font-size: 2rem;
+}
+header div div {
+  border-radius: 1rem;
+}
+header div div .offcanvas-header {
+  flex-direction: column;
+  align-items: normal;
+}
+header div div .offcanvas-header #carrito {
+  flex-wrap: wrap;
+  padding: 1rem;
 }
 
-header div{
-    display: flex;
-    justify-content: space-between;
-
+main .story-script-regular {
+  text-align: center;
+  border: 1px solid;
+  padding: 1rem;
+  font-family: "Story Script", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
- header div div{
-    border-radius: 1rem;
- }
- .offcanvas-header{
-    flex-direction: column;
-    align-items: normal;
- }
+main div#contenedor {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+}
+main div#contenedor .card-title {
+  font-family: "DM Serif Text", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+main div#contenedor .card-text {
+  font-family: "DM Serif Text", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+main div#contenedor .price {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  text-decoration-line: underline;
+}
+main div#contenedor .btnAgregar {
+  font-family: "Cal Sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+main .card {
+  width: 18rem;
+}
+@media screen and (max-width: 1280px) {
+  main .card {
+    width: 13rem;
+  }
+}
+main h3 {
+  text-align: center;
+  padding: 1rem;
+}
+main .d-flex {
+  padding: 1rem;
+  gap: 12rem;
+}
+main .d-flex span {
+  width: 10rem;
+  color: rgb(6, 92, 6);
+}
+main .d-flex .precioCarrito {
+  color: rgb(6, 92, 6);
+  padding-left: 29rem;
+}
+main .img2 {
+  width: 8rem;
+  padding-right: 4rem;
+}
+main .total {
+  padding: 1rem;
+  color: rgb(6, 92, 6);
+  text-decoration-line: underline;
+}
 
- #carrito{flex-wrap: wrap;padding: 1rem;}
+/*# sourceMappingURL=style.css.map */

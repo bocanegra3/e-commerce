@@ -1,0 +1,72 @@
+@use 'media-querys';
+
+header div{
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    align-items: center;
+    .btn .btn{font-size: 2rem;}
+    div{
+        border-radius: 1rem;
+        .offcanvas-header{
+        flex-direction: column;
+        align-items: normal;
+        #carrito{flex-wrap: wrap;padding: 1rem;}
+    }
+    }
+}
+main{
+.story-script-regular{
+    text-align: center;
+    border:1px solid ;
+    padding: 1rem;
+    font-family: "Story Script", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+    div#contenedor{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    .card-title{
+    font-family: "DM Serif Text", serif;
+    font-weight: 400;
+    font-style: normal;
+    }
+    .card-text{
+    font-family: "DM Serif Text", serif;
+    font-weight: 400;
+    font-style: italic;
+    }
+    .price{
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        text-decoration-line:underline;
+    }
+    .btnAgregar{
+    font-family: "Cal Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    }
+    }
+    .card{
+    width: 18rem;
+    @include media-querys.laptops{width: 13rem;}
+    }
+    h3{text-align: center;padding: 1rem;}
+    .d-flex{
+    padding: 1rem;
+    gap: 12rem;
+    
+    span{
+        width: 10rem;
+        color: rgb(6, 92, 6);
+    }
+    .precioCarrito{color: rgb(6, 92, 6);padding-left: 29rem;}
+    }    
+    .img2{width: 8rem;padding-right: 4rem;}
+    .total{padding: 1rem;color: rgb(6, 92, 6);text-decoration-line:underline;}
+
+}
+
+
