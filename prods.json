@@ -1,0 +1,65 @@
+[
+    {
+    "id": 1,
+    "nombre": "Cristales internos",
+    "precio": 35000,
+    "descripcion": "'El verdadero tesoro esta en uno.",
+    "img": "../assets/img/tapiz0b.png",
+    "img2": "../assets/img/tapiz0c.png",
+    "categoria": "Mas Vendido"
+    },
+    {
+    "id": 2,
+    "nombre": "Iluminar Interior",
+    "precio": 28000,
+    "descripcion": "Mirar hacia el inverior es el primer paso para comenzar a ver.",
+    "img": "../assets/img/tapiz1b.png",
+    "img2": "../assets/img/tapiz1c.png",
+    "categoria": "Mas Vendido"    
+    },
+    {
+    "id": 3,
+    "nombre": "Chackra Lunar",
+    "precio": 19000,
+    "descripcion": "Las formas son solo la perspectiva de donde uno mira.",
+    "img": "../assets/img/tapiz2b.png",
+    "img2": "../assets/img/tapiz2c.png",
+    "categoria": "Oferta"
+    },
+    {
+    "id": 4,
+    "nombre": "Reflejo Sombrio",
+    "precio": 180000,
+    "descripcion": "Las frecuencias son solo la perspectiva de donde uno es.",
+    "img": "../assets/img/tapiz3b.png",
+    "img2": "../assets/img/tapiz3c.png",
+    "categoria": "Oferta"
+    },
+    {
+    "id":5,
+    "nombre":"Ser Multiverso",
+    "precio":23000,
+    "descripcion": "Entre el cielo y el infierno habitan seres extraordinarios.",
+    "img": "../assets/img/tapiz4b.png",
+    "img2": "../assets/img/tapiz4c.png",
+    "categoria":"Nuevo"    
+    },
+    {
+    "id":6, 
+    "nombre":"Meditacion", 
+    "precio":25000, 
+    "descripcion": "La iluminacion es solo un estado de claridad", 
+    "img": "../assets/img/tapiz5b.png",
+    "img2": "../assets/img/tapiz5c.png",
+    "categoria":"Nuevo"    
+    },
+    {
+    "id":7, 
+    "nombre":"Erupcion interna", 
+    "precio":33000, 
+    "descripcion": "Las formas son solo la perspectiva de donde uno mira.", 
+    "img": "../assets/img/tapiz6b.png",
+    "img2": "../assets/img/tapiz6c.png",
+    "categoria":"Nuevo"
+}
+]

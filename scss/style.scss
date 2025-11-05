@@ -23,12 +23,13 @@ main{
     font-family: "Story Script", sans-serif;
     font-weight: 400;
     font-style: normal;
-}
+    }
     div#contenedor{
     display: flex;
     flex-wrap: wrap;
     align-content: center;
     justify-content: center;
+    
     .card-title{
     font-family: "DM Serif Text", serif;
     font-weight: 400;
@@ -49,23 +50,30 @@ main{
     font-style: normal;
     }
     }
-    .card{
+/*     .card{
     width: 18rem;
+    padding:1rem;
+    margin:1rem;
     @include media-querys.laptops{width: 13rem;}
-    }
+    } */
     h3{text-align: center;padding: 1rem;}
     .d-flex{
     padding: 1rem;
     gap: 12rem;
-    
+    }
+     #carrito{
+        div{
+    .img2{width: 8rem;padding-right: 1rem;}
     span{
         width: 10rem;
+        padding-right: 60%;
         color: rgb(6, 92, 6);
     }
-    .precioCarrito{color: rgb(6, 92, 6);padding-left: 29rem;}
+    .precioCarrito{color: rgb(6, 92, 6);}
     }    
-    .img2{width: 8rem;padding-right: 4rem;}
+    
     .total{padding: 1rem;color: rgb(6, 92, 6);text-decoration-line:underline;}
+    }
 
 }
 

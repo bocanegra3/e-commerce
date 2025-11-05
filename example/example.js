@@ -1,4 +1,4 @@
-//clase 1
+/* //clase 1
 /* const toggle = document.getElementById('navToggle');
 const menu = document.getElementById('navMenu');
 
@@ -498,7 +498,7 @@ console.log(contenedorByClassName);
 
 
 
-
+/* 
  alert("Bienvenido a e-commers 1990.");//mensaje de bienvenida.
 const nombreUsuario = prompt ("Diganos su nombre por favor...");//primera interaccion.
 const talleUsuario = prompt("Indicanos tu talle de zapatillas :");//segunda interaccion.
@@ -659,4 +659,4 @@ switch(seleccion){
 } while (seleccion !== "8");
 
 console.log("Muchas gracias por su compra " + nombreUsuario);
-} 
+}   */

@@ -19,6 +19,14 @@ header div div .offcanvas-header #carrito {
   padding: 1rem;
 }
 
+main {
+  /*    .card{
+     width: 18rem;
+     padding:1rem;
+     margin:1rem;
+     @include media-querys.laptops{width: 13rem;}
+     } */
+}
 main .story-script-regular {
   text-align: center;
   border: 1px solid;
@@ -52,14 +60,6 @@ main div#contenedor .btnAgregar {
   font-weight: 400;
   font-style: normal;
 }
-main .card {
-  width: 18rem;
-}
-@media screen and (max-width: 1280px) {
-  main .card {
-    width: 13rem;
-  }
-}
 main h3 {
   text-align: center;
   padding: 1rem;
@@ -68,19 +68,19 @@ main .d-flex {
   padding: 1rem;
   gap: 12rem;
 }
-main .d-flex span {
-  width: 10rem;
-  color: rgb(6, 92, 6);
-}
-main .d-flex .precioCarrito {
-  color: rgb(6, 92, 6);
-  padding-left: 29rem;
-}
-main .img2 {
+main #carrito div .img2 {
   width: 8rem;
-  padding-right: 4rem;
+  padding-right: 1rem;
 }
-main .total {
+main #carrito div span {
+  width: 10rem;
+  padding-right: 60%;
+  color: rgb(6, 92, 6);
+}
+main #carrito div .precioCarrito {
+  color: rgb(6, 92, 6);
+}
+main #carrito .total {
   padding: 1rem;
   color: rgb(6, 92, 6);
   text-decoration-line: underline;
