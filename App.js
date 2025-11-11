@@ -14,8 +14,10 @@ const actualizarCantidadGlobal = () => {
 
 
 const llamadoAlServidor = async () => {
+  const titulo = document.getElementById("titulo");
   let llamada = await fetch("../prods.json");
   let data = await llamada.json();
+  titulo.innerText = "Tapizarte Web E-Commerce";
 
   data.forEach((producto) => {
     let div = document.createElement("div");    
@@ -40,13 +42,12 @@ const llamadoAlServidor = async () => {
       const tapizSeleccionado = data.find((p) => String(p.id) === String(id));
       let tapizEnCarrito = carrito.find((p) => p.id === tapizSeleccionado.id);
       actualizarCantidadGlobal();
-      Swal.fire({
-      theme: 'dark',
+      Swal.fire({      
       position: "top-end",
       icon: "success",
       title: "Has agregado el producto",
       showConfirmButton: false,
-      timer: 1111
+      timer: 888
       }); 
       if (!tapizEnCarrito) {
         tapizEnCarrito = { ...tapizSeleccionado, cantidad: 1 };
