@@ -82,7 +82,7 @@ cargarDom();
 
  */
 
-const contenedor = document.querySelector("#contenedor");
+/* const contenedor = document.querySelector("#contenedor");
 const divCarrito = document.querySelector("#carrito");
 const cantidadCarrito = document.querySelector("#cantidadCarrito");
 
@@ -152,4 +152,30 @@ const llamadoAlServidor = async () => {
   actualizarTotal();
 };
 
-llamadoAlServidor();
+llamadoAlServidor(); */
+
+<button class="btnComprar btn btn-succes btn-sm" data-id="${carrito}">X</button>  
+
+divCarrito.addEventListener("click", (e)=>{
+Swal.fire({
+  title: "Deseas finalizar la compra?",
+  text: "ir a pagar!",
+  icon: "warning",
+  showCancelButton: true,
+  confirmButtonColor: "#3085d6",
+  cancelButtonColor: "#d33",
+  confirmButtonText: "Si, deseo terminar la compra!"
+}).then((result) => {
+  if (result.isConfirmed) {
+  Swal.fire({
+  title: "Sweet!",
+  text: "Modal with a custom image.",
+  imageUrl: "../assets/img/mododepagoejemplo.jpg",
+  imageWidth: 400,
+  imageHeight: 200,
+  imageAlt: "Custom image"
+});
+  }
+});
+})
+

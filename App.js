@@ -2,6 +2,7 @@
 const contenedor = document.querySelector("#contenedor");
 const divCarrito = document.querySelector("#carrito");
 const cantidadCarrito = document.querySelector("#cantidadCarrito");
+const btnFinalizarCompra = document.querySelector("#btnFinalizarCompra");
 
 let carrito = [];
 
@@ -80,7 +81,7 @@ const llamadoAlServidor = async () => {
             <img class="img2" src="${tapizSeleccionado.img2 || tapizSeleccionado.img}" style="width:48px;height:48px;object-fit:cover">
             <span>${tapizSeleccionado.nombre}</span>
             <span class="qty badge bg-secondary">1</span>
-          </div>
+          </div>              
              <button class="btnEliminar btn btn-danger btn-sm" data-id="${tapizSeleccionado.id}">X</button>    
           <strong class="precioCarrito">$${tapizSeleccionado.precio}</strong>
           <span class="total"></span>
@@ -142,14 +143,71 @@ const llamadoAlServidor = async () => {
       icon: "error"
     });    
   }
-});
-
-
-  }
   });
 
 
+  } 
+  });
+
+   
+
+
   actualizarTotal();
+  btnFinalizarCompra.addEventListener("click", () => {
+  const totalCarrito = carrito.reduce((acc, p) => acc + p.precio * p.cantidad, 0);
+
+  if (totalCarrito === 0) {
+    Swal.fire({
+      icon: "info",
+      title: "Tu carrito está vacío",
+      text: "Agrega algún producto antes de finalizar la compra."
+    });
+    return;
+  }
+
+  Swal.fire({
+    title: "¿Deseas finalizar la compra?",
+    text: `Total a pagar: $${totalCarrito}`,
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonText: "Sí, ir a pagar"
+  }).then((result) => {
+    if (result.isConfirmed) {
+  Swal.fire({
+  title: "<strong>Metodo <u>de Pago</u></strong>",
+  icon: "info",
+  html: `
+    Haz click en el siguiente link <b>-></b>,
+    <a href="https://www.mercadopago.com.ar/" autofocus target="_blank">Mercado Pago</a>,
+    para concretar la compra.
+  `,
+  showCloseButton: true,
+  showCancelButton: true,
+  focusConfirm: false,
+  confirmButtonText: `
+    <i class="fa fa-thumbs-up"></i> Listo!
+  `,
+  confirmButtonAriaLabel: "Thumbs up, great!",
+  cancelButtonText: `
+    <i class="fa fa-thumbs-down">No por el momento</i>
+  `,
+  cancelButtonAriaLabel: "Thumbs down"
+  
+  }).then((result) => {
+    
+      if (result.isConfirmed) {
+        carrito = [];        
+        divCarrito.innerHTML = "";   
+        actualizarTotal();         
+        actualizarCantidadGlobal();  
+
+        Swal.fire("¡Gracias por tu compra!", "", "success");
+      }
+
+    });
+    }
+  });
+});
 
   
 
