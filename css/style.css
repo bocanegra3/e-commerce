@@ -84,6 +84,7 @@ h1 {
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
   overflow: hidden;
   transition: all 0.3s ease;
+  width: 25rem;
 }
 .card:hover,
 #contenedor > div:hover {
@@ -97,7 +98,6 @@ h1 {
 #contenedor > div img.card-img-top,
 #contenedor > div > img:first-child {
   width: 100%;
-  height: clamp(180px, 28vw, 260px);
   object-fit: cover;
   display: block;
 }
@@ -364,6 +364,24 @@ h1 {
 .badge-warm {
   background: #c9a24b;
   color: #2f2a1f;
+}
+
+/*boton confirmar eliminar producto*/
+.swal2-confirm {
+  background: #198754;
+}
+.swal2-confirm:hover {
+  background: #116d42;
+}
+
+.BotonFooter {
+  padding: 1rem;
+  border: 1px solid rgba(201, 162, 75, 0.6);
+  border-radius: 1rem;
+  margin-left: 93.3vw;
+}
+.BotonFooter:hover {
+  background: rgba(201, 162, 75, 0.6);
 }
 
 /*# sourceMappingURL=style.css.map */

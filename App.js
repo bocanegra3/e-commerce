@@ -12,6 +12,23 @@ const actualizarCantidadGlobal = () => {
   linkCarrito.textContent = `🛒 (${totalUnidades})`;
 };
 
+const actualizarTotal = () => {
+  const total = carrito.reduce((acc, producto) => {
+    return acc + producto.precio * producto.cantidad;
+  }, 0);
+
+  let totalDiv = divCarrito.querySelector(".total");
+
+  if (!totalDiv) {
+    totalDiv = document.createElement("div");
+    totalDiv.className = "mt-3 fw-bold text-end total";
+    divCarrito.appendChild(totalDiv);
+  }
+
+  totalDiv.textContent = `Total: $${total}`;
+};
+
+
 
 const llamadoAlServidor = async () => {
   const titulo = document.getElementById("titulo");
@@ -52,6 +69,7 @@ const llamadoAlServidor = async () => {
       if (!tapizEnCarrito) {
         tapizEnCarrito = { ...tapizSeleccionado, cantidad: 1 };
         carrito.push(tapizEnCarrito);
+       
 
         const item = document.createElement("div");
         item.className = "d-flex justify-content-between align-items-center border-bottom py-2";
@@ -65,6 +83,7 @@ const llamadoAlServidor = async () => {
           </div>
              <button class="btnEliminar btn btn-danger btn-sm" data-id="${tapizSeleccionado.id}">X</button>    
           <strong class="precioCarrito">$${tapizSeleccionado.precio}</strong>
+          <span class="total"></span>
         `;
         divCarrito.appendChild(item);
       } else {      
@@ -76,17 +95,56 @@ const llamadoAlServidor = async () => {
       actualizarCantidadGlobal();
       actualizarTotal();
     });
+
   });
+
   divCarrito.addEventListener("click", (e) => {
   if (e.target.classList.contains("btnEliminar")) {
     const id = e.target.dataset.id;
 
+  const swalWithBootstrapButtons = Swal.mixin({
+  customClass: {
+    confirmButton: "btn btn-success",
+    cancelButton: "btn btn-danger"    
+  },
+  buttonsStyling: false
+  });
+
+  swalWithBootstrapButtons.fire({
+  title: "Estas seguro?",
+  text: "Si eliminas no tiene retorno!",
+  icon: "warning",
+  showCancelButton: true,
+  confirmButtonText: "Si, deseo eliminar!",
+  cancelButtonText: "No, cancelar!",
+  reverseButtons: true
+  }).then((result) => {
+    if (result.isConfirmed) {
     carrito = carrito.filter((producto) => producto.id != id);
     const item = divCarrito.querySelector(`[data-id="${id}"]`);
     if (item) item.remove();
 
     actualizarTotal();
     actualizarCantidadGlobal();
+
+    swalWithBootstrapButtons.fire({
+      title: "Eliminado!",
+      text: "El producto fue eliminado del carrito.",
+      icon: "success"
+    });
+  } else if (
+    /* Read more about handling dismissals below */
+    result.dismiss === Swal.DismissReason.cancel
+  ) {
+    swalWithBootstrapButtons.fire({
+      title: "Cancelado",
+      text: "Bien hecho, mantienes el producto",
+      icon: "error"
+    });    
+  }
+});
+
+
   }
   });
 
